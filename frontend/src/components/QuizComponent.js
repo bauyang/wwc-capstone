@@ -57,19 +57,20 @@ class QuizComponent extends Component {
     }
 
     if(aScore > bScore && aScore > cScore && aScore > dScore && aScore > eScore) {
-      alert("Zach");
+      document.location.href = "Zach";
     }
     if(bScore > aScore && bScore > cScore && bScore > dScore && bScore > eScore) {
-      alert("Lionel");
+      document.location.href = "Lionel";
     }
-    if(cScore > aScore && cScore > cScore && bScore > dScore && cScore > eScore) {
-      alert("George");
+    if(cScore > aScore && cScore > bScore && cScore > dScore && cScore > eScore) {
+      document.location.href = "George";
     }
     if(dScore > aScore && dScore > bScore && dScore > cScore && dScore > eScore) {
-      alert("Kaley");
+      document.location.href = "Kaley";
+      //alert("Kaley");
     }
     if(eScore > aScore && eScore > bScore && eScore > cScore && eScore > dScore) {
-      alert("Pasha");
+      document.location.href = "Pasha";
     }
 
     console.log(Math.max(aScore,bScore,cScore,dScore,eScore));
