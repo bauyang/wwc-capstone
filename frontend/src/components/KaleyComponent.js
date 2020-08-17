@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+//import { Link } from "react-router-dom";
+
 import QuizService from "../services/QuizService";
+
 import {
   Card,
   CardActionArea,
@@ -8,6 +11,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
+import QuizComponent from "./QuizComponent";
 
 const useStyles = () => ({
   root: {
@@ -45,9 +49,15 @@ class KaleyComponent extends Component {
             </CardActionArea>
           </Card>
         </div>
+        
        
       </div>
+
+       
     );
+    
+
+    
   }
 }
 

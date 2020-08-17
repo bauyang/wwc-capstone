@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import AppNav from "../components/AppNav";
 import ResultsComponent from "../components/ResultsComponent";
 import GeorgeComponent from "../components/GeorgeComponent";
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 class George extends Component {
   state = {};
   render() {
@@ -10,6 +12,9 @@ class George extends Component {
         <AppNav />
         <h1>Welcome to results</h1>
         <GeorgeComponent />
+        <Button component={Link} to="/Quiz" color="primary">
+      Retake
+    </Button>
       </div>
     );
   }
