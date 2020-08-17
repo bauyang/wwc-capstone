@@ -14,39 +14,56 @@ class UserComponent extends Component {
       name: "",
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.userChange = this.userChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+
     // this.submitUser = this.submitUser.bind(this);
   }
 
-  // submitUser = () => {
-  //   const user = { name: this.state.name };
-  //   axios.post("http://localhost:8080/user/", user);
-  //   let name = this.state;
-  //   UserService.createUserNames(name).then((response) => {
-  //     this.props.history.push("names");
-  //   });
-  // };
+  userChange = (event) => {
+    event.preventDefault();
+    this.setState({ name: event.target.value });
+    console.log("name:" + this.state.name);
+  };
+
+  handleSubmit(event) {
+    event.preventDefault();
+    alert(this.state.name);
+    this.submitUser();
+  }
+  // componentDidMount() {
+  //   if (this.props.name) {
+  //     this.setState({
+  //       name: this.props.name,
+  //     });
+  //   }
+  // }
+
+  submitUser = () => {
+    // event.preventDefault();
+    const user = { name: this.state.name };
+    axios.post("http://localhost:8080/user/", user);
+    let name = this.state;
+    UserService.createUserNames(name).then((response) => {
+      this.props.history.push("names");
+    });
+  };
 
   // using this yt video https://www.youtube.com/watch?v=ieMhlyjPjWo
-
-  userChange = (event) => {
-    this.setState({ name: event.target.value });
-  };
 
   // userList = () => {
   //   return this.props.history.push("names");
   // };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    let name = this.state.name;
-    UserService.createUserNames(name).then((response) => {
-      this.props.history.push("names");
-    });
-    this.setState({ name: "" });
-    console.log(this.state.name);
-  };
+  // handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   let name = this.state.name;
+  //   UserService.createUserNames(name).then((response) => {
+  //     this.props.history.push("addUser");
+  //   });
+  //   this.setState({ name: "" });
+  //   console.log(this.state.name);
+  // };
 
   render() {
     const { classes } = this.props;
@@ -63,7 +80,9 @@ class UserComponent extends Component {
               <Grid item onReset={this.resetUser}>
                 <TextField
                   id="input-with-icon-grid"
+                  name="name"
                   label="Username"
+                  className="form-control"
                   value={this.state.name}
                   onChange={this.userChange}
                 />

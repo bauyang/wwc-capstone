@@ -1,7 +1,9 @@
 package com.win.personality_quiz;
 
 import com.win.personality_quiz.model.Quiz;
+import com.win.personality_quiz.model.User;
 import com.win.personality_quiz.repository.QuizRepo;
+import com.win.personality_quiz.repository.UserRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,6 +20,9 @@ public class QuizApp implements CommandLineRunner {
 	@Autowired
 	private QuizRepo quizRepo;
 
+	// @Autowired
+	// private UserRepo userRepo;
+
 	public void run(String... args) throws Exception {
 		this.quizRepo.save(new Quiz("What Is Your Preferred Halloween Costume?", "A. None, I'm lame", "B. Skeleton",
 				"C. George of the Jungle", "D. A group costume with friends", "E. Cow"));
@@ -27,17 +32,20 @@ public class QuizApp implements CommandLineRunner {
 				"B. Total Eclipse of The Heart - Bonie Tyler", "C. Summer Lovin' - Grease", "D. Fat Lip - Sum 41",
 				"E. Cheeseburger in Paradise - Jimmy Buffett"));
 		this.quizRepo.save(new Quiz("How Do You Celebrate Your Birthday?", "A. Dinner out", "B. Eating",
-				"C. A vacation with my significant other", "D. A party with close friends and family", "E. With close friends"));
+				"C. A vacation with my significant other", "D. A party with close friends and family",
+				"E. With close friends"));
 		this.quizRepo.save(new Quiz("What Is Your Biggest Pet Peeve?", "A. Lack of empathy",
-				"B. Not following through with something", "C. Intentional ignorance", "D. Dirty dishes piling up in the sink",
+				"B. Not following through with something", "C. Intentional ignorance",
+				"D. Dirty dishes piling up in the sink",
 				"E. When I catch myself not being brave, honest, or courageous"));
-		this.quizRepo.save(new Quiz("If You Could Live Anywhere, Where Would It Be?", "A. Pacific Northwest",
-				"B. Manhattan, NY", "C.Charlotte, NC", "D. Lima, Peru", "E. I'm happy with where I am and what I have"));
+		this.quizRepo.save(
+				new Quiz("If You Could Live Anywhere, Where Would It Be?", "A. Pacific Northwest", "B. Manhattan, NY",
+						"C.Charlotte, NC", "D. Lima, Peru", "E. I'm happy with where I am and what I have"));
 		this.quizRepo.save(new Quiz("What could you eat A LOT of?", "A. Potato chips", "B. Watermelon", "C. Pizza",
 				"D. Chicken Pad Thai", "E. Ice cream"));
-		this.quizRepo.save(
-				new Quiz("Pick a Fictional Hangout Spot", "A. Hogwarts, Harry Potter", "B. Jellyfish Fields, Sponge Bob",
-						"C. MacLaren's Pub, HIMYM", "D. The Honker Burger, Doug", "E. Anywhere with the Parks and Rec group"));
+		this.quizRepo.save(new Quiz("Pick a Fictional Hangout Spot", "A. Hogwarts, Harry Potter",
+				"B. Jellyfish Fields, Sponge Bob", "C. MacLaren's Pub, HIMYM", "D. The Honker Burger, Doug",
+				"E. Anywhere with the Parks and Rec group"));
 		this.quizRepo.save(new Quiz("Danger's Afoot. No Time To Wait For Backup. What Do You Do?", "A. Call a friend",
 				"B. Pick a hiding spot and observe the situation from a distance", "C. Evacuate!",
 				"D. Grab a first-aid-kit, cellphone, and a knife. You never know what kind of danger you're walking into",
@@ -55,6 +63,7 @@ public class QuizApp implements CommandLineRunner {
 		this.quizRepo.save(new Quiz("What's Your Motto to Live By?", "A. Work to live, don't live to work",
 				"B. Do the best with what you have", "C. Keep on keeping on", "D. The only constant is change",
 				"E. Help others without expecting to receive"));
+		//this.userRepo.save(new User("addUser"));
 	}
 
 }

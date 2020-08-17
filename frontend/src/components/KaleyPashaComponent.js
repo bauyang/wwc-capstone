@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import QuizService from "../services/QuizService";
 import {
   Card,
   CardActionArea,
@@ -8,7 +7,6 @@ import {
   Typography,
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
-
 const useStyles = () => ({
   root: {
     maxWidth: 345,
@@ -17,36 +15,35 @@ const useStyles = () => ({
     height: 250,
   },
 });
-
-class PashaComponent extends Component {
+class KaleyPashaComponent extends Component {
   state = {};
-
   render() {
     const { classes } = this.props;
     return (
-      <div>
-        <div className="Pasha">
+        <div>
+        <div className="KaleyPasha">
           <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
                 className={classes.media}
                 component="img"
-                height="300"
-                image={require("../images/pasha.png")}
-                title="Pasha"
+                height="500"
+              //  image={require("../images/kaley.png")}
+                image={require("../images/kaleypasha.png")}
+                title="KaleyPasha"
               ></CardMedia>
+
               <CardContent>
                 <Typography variant="h5" component="h2">
-                  You're like Pasha!
+                  You're like Kaley and Pasha!
                 </Typography>
                 <Typography>blurb</Typography>
               </CardContent>
             </CardActionArea>
           </Card>
         </div>
-      </div>
-    );
-  }
-}
-
-export default withStyles(useStyles)(PashaComponent);
+        </div>
+        );
+      }
+    }
+    export default withStyles(useStyles)(KaleyPashaComponent);
