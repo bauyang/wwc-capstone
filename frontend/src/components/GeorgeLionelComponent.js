@@ -36,7 +36,21 @@ class GeorgeLionelComponent extends Component {
                 <Typography variant="h5" component="h2">
                   You're like Lional and George!
                 </Typography>
-                <Typography>blurb</Typography>
+                <Typography>
+                  While thoughtfulness is what George
+                  <br />
+                  looks for in others,
+                  <br />
+                  he doesn't think a lot about his costume choices...
+                  <br />
+                </Typography>
+                <Typography>
+                  Lionel is a watch-from-a-distance
+                  <br />
+                  type of guy, even though
+                  <br />
+                  his ideal place to live is very overcrowded...
+                </Typography>
               </CardContent>
             </CardActionArea>
           </Card>

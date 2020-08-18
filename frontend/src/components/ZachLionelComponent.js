@@ -36,9 +36,27 @@ class ZachLionelComponent extends Component {
                 <Typography variant="h5" component="h2">
                   You're like Zach and Lionel!
                 </Typography>
-                <Typography>blurb</Typography>
+                <Typography>
+                  Zach would be more likely to enjoy
+                  <br />
+                  a long walk at Hogwarts
+                  <br />
+                  than at the beach. But doesn't like costumes...
+                </Typography>
+                <Typography>
+                  Lionel is a watch-from-a-distance
+                  <br />
+                  type of guy, even though
+                  <br />
+                  his ideal place to live is very overcrowded...
+                </Typography>
               </CardContent>
             </CardActionArea>
+            <CardActions>
+              <Button component={Link} to="/quiz" color="primary">
+                Retake
+              </Button>
+            </CardActions>
           </Card>
         </div>
       </div>

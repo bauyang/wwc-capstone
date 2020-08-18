@@ -36,9 +36,27 @@ class ZachPashaComponent extends Component {
                 <Typography variant="h5" component="h2">
                   You're like Zach and Pasha!
                 </Typography>
-                <Typography>blurb</Typography>
-              </CardContent>
+                <Typography>
+                  Zach would be more likely to enjoy
+                  <br />
+                  a long walk at Hogwarts
+                  <br />
+                  than at the beach. But doesn't like costumes...
+                </Typography>
+                <Typography>
+                  Pasha could eat <b>a lot</b> of ice cream
+                  <br />
+                  despite his karaoke song
+                  <br />
+                  involving cheeseburgers. Suspicious...
+                </Typography>
+                </CardContent>
             </CardActionArea>
+            <CardActions>
+              <Button component={Link} to="/quiz" color="primary">
+                Retake
+              </Button>
+            </CardActions>
           </Card>
         </div>
       </div>

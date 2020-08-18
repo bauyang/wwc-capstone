@@ -36,9 +36,27 @@ class PashaLionelComponent extends Component {
                 <Typography variant="h5" component="h2">
                   You're like Pasha and Lionel!
                 </Typography>
-                <Typography>blurb</Typography>
+                <Typography>
+                  Pasha could eat <b>a lot</b> of ice cream
+                  <br />
+                  despite his karaoke song
+                  <br />
+                  involving cheeseburgers. Suspicious...
+                </Typography>
+                <Typography>
+                  Lionel is a watch-from-a-distance
+                  <br />
+                  type of guy, even though
+                  <br />
+                  his ideal place to live is very overcrowded...
+                </Typography>
               </CardContent>
             </CardActionArea>
+            <CardActions>
+              <Button component={Link} to="/quiz" color="primary">
+                Retake
+              </Button>
+            </CardActions>
           </Card>
         </div>
         </div>

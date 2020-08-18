@@ -36,7 +36,21 @@ class GeorgePashaComponent extends Component {
                 <Typography variant="h5" component="h2">
                   You're like George and Pasha!
                 </Typography>
-                <Typography>blurb</Typography>
+                <Typography>
+                  While thoughtfulness is what George
+                  <br />
+                  looks for in others,
+                  <br />
+                  he doesn't think a lot about his costume choices...
+                  <br />
+                </Typography>
+                <Typography>
+                  Pasha could eat <b>a lot</b> of ice cream
+                  <br />
+                  despite his karaoke song
+                  <br />
+                  involving cheeseburgers. Suspicious...
+                </Typography>
               </CardContent>
             </CardActionArea>
           </Card>

@@ -36,9 +36,28 @@ class ZachGeorgeComponent extends Component {
                 <Typography variant="h5" component="h2">
                   You're like Zach and George!
                 </Typography>
-                <Typography>blurb</Typography>
-              </CardContent>
+                <Typography>
+                  While thoughtfulness is what George
+                  <br />
+                  looks for in others,
+                  <br />
+                  he doesn't think a lot about his costume choices...
+                  <br />
+                </Typography>
+                <Typography>
+                  Zach would be more likely to enjoy
+                  <br />
+                  a long walk at Hogwarts
+                  <br />
+                  than at the beach. But doesn't like costumes...
+                </Typography>
+                </CardContent>
             </CardActionArea>
+            <CardActions>
+              <Button component={Link} to="/quiz" color="primary">
+                Retake
+              </Button>
+            </CardActions>
           </Card>
         </div>
         </div>
