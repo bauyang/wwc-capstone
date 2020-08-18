@@ -23,7 +23,7 @@ public class UserController {
 
     @GetMapping("names")
     public Collection<User> getUserNames() {
-        this.userRepo.save(new User("names"));
+
         return (Collection<User>) userRepo.findAll();
     }
 

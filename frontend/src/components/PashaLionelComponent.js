@@ -1,10 +1,14 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import {
   Card,
   CardActionArea,
   CardMedia,
   CardContent,
   Typography,
+  CardActions,
+  Button,
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
 const useStyles = () => ({
@@ -20,7 +24,7 @@ class PashaLionelComponent extends Component {
   render() {
     const { classes } = this.props;
     return (
-        <div>
+      <div>
         <div className="PashaLionel">
           <Card className={classes.root}>
             <CardActionArea>
@@ -59,8 +63,8 @@ class PashaLionelComponent extends Component {
             </CardActions>
           </Card>
         </div>
-        </div>
-        );
-      }
-    }
-    export default withStyles(useStyles)(PashaLionelComponent);
+      </div>
+    );
+  }
+}
+export default withStyles(useStyles)(PashaLionelComponent);

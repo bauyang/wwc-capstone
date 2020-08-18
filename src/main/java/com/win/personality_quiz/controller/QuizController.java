@@ -2,12 +2,16 @@ package com.win.personality_quiz.controller;
 
 import java.util.Collection;
 
+
 import com.win.personality_quiz.model.Quiz;
+
 import com.win.personality_quiz.repository.QuizRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,4 +28,16 @@ public class QuizController {
         return quizRepo.findAll();
     }
 
+    // @GetMapping("questions")
+    // public ResponseEntity<Object> getQuestions() {
+    // return new ResponseEntity<>(quizService.getQuestions(), HttpStatus.OK);
+    // }
+
+    // save answers into database
+    // @CrossOrigin(origins = "http://localhost:3000")
+    // @PostMapping("answers")
+    // public String addAnswer(@ModelAttribute("quiz") Answer answers) {
+    // answerRepo.save(answers);
+    // return "/QuizComponent.js";
+    // }
 }

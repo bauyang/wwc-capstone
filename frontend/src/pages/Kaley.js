@@ -16,9 +16,7 @@ class Kaley extends Component {
         {/* <Button variant="outlined">Default</Button> */}
 
 
-    <Button component={Link} to="/Quiz" color="primary">
-      Retake
-    </Button>
+    
       </div>
     );
   }

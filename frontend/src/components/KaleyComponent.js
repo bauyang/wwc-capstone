@@ -2,6 +2,7 @@ import React, { Component } from "react";
 //import { Link } from "react-router-dom";
 
 import QuizService from "../services/QuizService";
+import { Link } from "react-router-dom";
 
 import {
   Card,
@@ -9,6 +10,8 @@ import {
   CardMedia,
   CardContent,
   Typography,
+  CardActions,
+  Button,
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
 import QuizComponent from "./QuizComponent";
@@ -61,15 +64,8 @@ class KaleyComponent extends Component {
             </CardActions>
           </Card>
         </div>
-        
-       
       </div>
-
-       
     );
-    
-
-    
   }
 }
 

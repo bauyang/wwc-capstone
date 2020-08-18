@@ -12,9 +12,7 @@ class George extends Component {
         <AppNav />
         <h1>Welcome to results</h1>
         <GeorgeComponent />
-        <Button component={Link} to="/Quiz" color="primary">
-      Retake
-    </Button>
+        
       </div>
     );
   }

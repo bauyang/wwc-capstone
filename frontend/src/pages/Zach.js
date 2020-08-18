@@ -12,9 +12,7 @@ class Zach extends Component {
         <AppNav />
         <h1>Welcome to results</h1>
         <ZachComponent />
-        <Button component={Link} to="/Quiz" color="primary">
-      Retake
-    </Button>
+       
       </div>
     );
   }

@@ -12,9 +12,7 @@ class Pasha extends Component {
         <AppNav />
         <h1>Welcome to results</h1>
         <PashaComponent/>
-        <Button component={Link} to="/Quiz" color="primary">
-      Retake
-    </Button>
+       
       </div>
     );
   }

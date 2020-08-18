@@ -1,9 +1,9 @@
 package com.win.personality_quiz;
 
+import com.win.personality_quiz.model.Answer;
 import com.win.personality_quiz.model.Quiz;
-import com.win.personality_quiz.model.User;
+import com.win.personality_quiz.repository.AnswerRepo;
 import com.win.personality_quiz.repository.QuizRepo;
-import com.win.personality_quiz.repository.UserRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -20,8 +20,8 @@ public class QuizApp implements CommandLineRunner {
 	@Autowired
 	private QuizRepo quizRepo;
 
-	// @Autowired
-	// private UserRepo userRepo;
+	@Autowired
+	private AnswerRepo answerRepo;
 
 	public void run(String... args) throws Exception {
 		this.quizRepo.save(new Quiz("What Is Your Preferred Halloween Costume?", "A. None, I'm lame", "B. Skeleton",
@@ -63,7 +63,7 @@ public class QuizApp implements CommandLineRunner {
 		this.quizRepo.save(new Quiz("What's Your Motto to Live By?", "A. Work to live, don't live to work",
 				"B. Do the best with what you have", "C. Keep on keeping on", "D. The only constant is change",
 				"E. Help others without expecting to receive"));
-		//this.userRepo.save(new User("addUser"));
+		this.answerRepo.save(new Answer("question", "answers"));
 	}
 
 }
