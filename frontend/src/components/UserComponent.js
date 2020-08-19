@@ -194,26 +194,26 @@ class UserComponent extends Component {
             </Grid>
           </Grid>
           <br />
+          <div>
+            {/* <Grid item> */}
+            <TextField
+              id="input-with-icon-grid"
+              label="Username"
+              onChange={this.saveUser}
+            />
+            {/* <Button onClick={this.submitUser}></Button> */}
+            {/* </Grid> */}
 
-          {/* <Grid item> */}
-          <TextField
-            id="input-with-icon-grid"
-            label="Username"
-            onChange={this.saveUser}
-            
-          />
-          {/* <Button onClick={this.submitUser}></Button> */}
-          {/* </Grid> */}
-
-          <Button
-            variant="contained"
-            color="primary"
-            component={Link}
-            to="/quiz"
-            onClick={this.submitUser}
-          >
-            Take Quiz
-          </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              component={Link}
+              to="/quiz"
+              onClick={this.submitUser}
+            >
+              Take Quiz
+            </Button>
+          </div>
           <br />
         </Grid>
       </div>
