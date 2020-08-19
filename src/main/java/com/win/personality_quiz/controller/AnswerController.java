@@ -1,6 +1,6 @@
 package com.win.personality_quiz.controller;
 
-import java.util.Collection;
+
 import java.util.List;
 
 import com.win.personality_quiz.model.Answer;
@@ -11,9 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
