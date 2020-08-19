@@ -10,7 +10,7 @@ class Zach extends Component {
     return (
       <div>
         <AppNav />
-        <h1>Welcome to results</h1>
+       
         <ZachComponent />
        
       </div>

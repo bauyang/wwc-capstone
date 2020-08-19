@@ -28,7 +28,7 @@ class Pasha extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <AppNav />
+        
         <Grid
           container
           spacing={0}
