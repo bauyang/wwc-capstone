@@ -2,28 +2,32 @@ package com.win.personality_quiz.controller;
 
 import java.util.Collection;
 
-
+import com.win.personality_quiz.model.Answer;
 import com.win.personality_quiz.model.Quiz;
-
+import com.win.personality_quiz.repository.AnswerRepo;
 import com.win.personality_quiz.repository.QuizRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("quiz/")
+@RequestMapping("/quiz")
 @CrossOrigin(origins = "http://localhost:3000")
 public class QuizController {
 
     @Autowired
     private QuizRepo quizRepo;
+    @Autowired
+    private AnswerRepo answerRepo;
 
-    @GetMapping("questions")
+    @GetMapping("/questions")
     public Collection<Quiz> getQuestions() {
         return quizRepo.findAll();
     }
@@ -36,8 +40,9 @@ public class QuizController {
     // save answers into database
     // @CrossOrigin(origins = "http://localhost:3000")
     // @PostMapping("answers")
-    // public String addAnswer(@ModelAttribute("quiz") Answer answers) {
-    // answerRepo.save(answers);
-    // return "/QuizComponent.js";
+    // public void addAnswer(@RequestBody Answer answers) {
+    //     System.out.println(answers);
+    //     answerRepo.save(answers);
+    //     // return "QuizComponent";
     // }
 }

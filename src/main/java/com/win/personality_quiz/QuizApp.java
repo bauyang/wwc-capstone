@@ -20,9 +20,6 @@ public class QuizApp implements CommandLineRunner {
 	@Autowired
 	private QuizRepo quizRepo;
 
-	@Autowired
-	private AnswerRepo answerRepo;
-
 	public void run(String... args) throws Exception {
 		this.quizRepo.save(new Quiz("What Is Your Preferred Halloween Costume?", "A. None, I'm lame", "B. Skeleton",
 				"C. George of the Jungle", "D. A group costume with friends", "E. Cow"));
@@ -63,7 +60,7 @@ public class QuizApp implements CommandLineRunner {
 		this.quizRepo.save(new Quiz("What's Your Motto to Live By?", "A. Work to live, don't live to work",
 				"B. Do the best with what you have", "C. Keep on keeping on", "D. The only constant is change",
 				"E. Help others without expecting to receive"));
-		this.answerRepo.save(new Answer("question", "answers"));
+		// this.answerRepo.save(new Answer("question", "answers"));
 	}
 
 }

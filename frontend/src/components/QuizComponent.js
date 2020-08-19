@@ -11,6 +11,7 @@ import {
   Typography,
   Error,
 } from "@material-ui/core";
+import Axios from "axios";
 class QuizComponent extends Component {
   constructor(props) {
     super(props);
@@ -27,6 +28,7 @@ class QuizComponent extends Component {
   handleChange = (event) => {
     let data = event.target.value.charAt(0);
     this.state.dataArray.push(data);
+    console.log(this.state.dataArray);
   };
   calculate = () => {
     let aScore = 0;
@@ -70,10 +72,21 @@ class QuizComponent extends Component {
     }
     if (tieIndex > -1) {
       document.location.href = personality[index] + personality[tieIndex];
+      // document.location.href = personality[tieindex] + personality[index];
     } else {
       document.location.href = personality[index];
     }
+    this.handlePost();
   };
+
+  handlePost = () => {
+    let data = {
+      question: "test",
+      answers: "testanswer",
+    };
+    Axios.post("http://localhost:8080/quiz/answers", data);
+  };
+
   //scoring ends
   render() {
     return (

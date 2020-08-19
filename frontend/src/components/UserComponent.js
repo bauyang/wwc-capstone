@@ -1,10 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Grid, TextField, Button } from "@material-ui/core";
+//import { Grid, TextField, Button } from "@material-ui/core";
 import { AccountCircleRounded } from "@material-ui/icons";
 import UserService from "../services/UserService";
 
+import AppNav from "../components/AppNav";
+import {
+  Card,
+  CardActionArea,
+  CardMedia,
+  CardContent,
+  Typography,
+  Button,
+  Grid,
+  TextField,
+} from "@material-ui/core";
 class UserComponent extends Component {
   state = {};
 
@@ -38,15 +49,18 @@ class UserComponent extends Component {
   //     });
   //   }
   // }
+  saveUser = (event) => {
+    this.setState({ name: event.target.value });
+  };
 
   submitUser = () => {
     // event.preventDefault();
-    const user = { name: this.state.name };
-    axios.post("http://localhost:8080/user/", user);
-    let name = this.state;
-    UserService.createUserNames(name).then((response) => {
-      this.props.history.push("names");
-    });
+    const user = { userName: this.state.name };
+    axios.post("http://localhost:8080/user/names", user);
+    //  let name = this.state;
+    // UserService.createUserNames(name).then((response) => {
+    //   this.props.history.push("names");
+    // });
   };
 
   // using this yt video https://www.youtube.com/watch?v=ieMhlyjPjWo
@@ -66,42 +80,142 @@ class UserComponent extends Component {
   // };
 
   render() {
-    const { classes } = this.props;
-
     return (
       <div>
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <Grid container spacing={1} alignItems="flex-end">
-              <Grid item>
-                <AccountCircleRounded />
-              </Grid>
-
-              <Grid item onReset={this.resetUser}>
-                <TextField
-                  id="input-with-icon-grid"
-                  name="name"
-                  label="Username"
-                  className="form-control"
-                  value={this.state.name}
-                  onChange={this.userChange}
-                />
-              </Grid>
-              <Grid item>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size="small"
-                  onClick={this.handleSubmit}
-                  component={Link}
-                  to="/quiz"
-                >
-                  Take Quiz
-                </Button>
-              </Grid>
+        {/* <Grid item>
+          <TextField
+            id="input-with-icon-grid"
+            label="Username"
+            onChange={this.saveUser}
+          />
+          <Button onClick={this.submitUser}></Button>
+        </Grid> */}
+        <Grid
+          container
+          spacing={0}
+          direction="column"
+          alignItems="center"
+          style={{ minHeight: "100vh" }}
+        >
+          <h1>Welcome to WWC's personality quiz!</h1>
+          <p>Find out which WIN mentor you most likely resemble</p>
+          <Grid container direction="row" justify="center" alignItems="center">
+            <Card style={{ margin: 10 }}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  width="100"
+                  image={require("../images/pasha.png")}
+                  title="Pasha"
+                ></CardMedia>
+                <CardContent>
+                  <Typography variant="h5" component="h2">
+                    <center>
+                      <b>Pasha</b>
+                    </center>
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+            <Card style={{ margin: 10 }}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  width="100"
+                  image={require("../images/zach.png")}
+                  title="Zach"
+                ></CardMedia>
+                <CardContent>
+                  <Typography variant="h5" component="h2">
+                    <center>
+                      <b>Zach</b>
+                    </center>
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+            <Card style={{ margin: 10 }}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  width="100"
+                  image={require("../images/lionel.png")}
+                  title="Lionel"
+                ></CardMedia>
+                <CardContent>
+                  <Typography variant="h5" component="h2">
+                    <center>
+                      <b>Lionel</b>
+                    </center>
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+            <Grid
+              container
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Card style={{ margin: 10 }}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    width="100"
+                    image={require("../images/george.png")}
+                    title="George"
+                  ></CardMedia>
+                  <CardContent>
+                    <Typography variant="h5" component="h2">
+                      <center>
+                        <b>George</b>
+                      </center>
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+              <Card style={{ margin: 10 }}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    width="100"
+                    image={require("../images/kaley.png")}
+                    title="Kaley"
+                  ></CardMedia>
+                  <CardContent>
+                    <Typography variant="h5" component="h2">
+                      <center>
+                        <b>Kaley</b>
+                      </center>
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
             </Grid>
-          </form>
-        </div>
+          </Grid>
+          <br />
+
+          {/* <Grid item> */}
+          <TextField
+            id="input-with-icon-grid"
+            label="Username"
+            onChange={this.saveUser}
+            
+          />
+          {/* <Button onClick={this.submitUser}></Button> */}
+          {/* </Grid> */}
+
+          <Button
+            variant="contained"
+            color="primary"
+            component={Link}
+            to="/quiz"
+            onClick={this.submitUser}
+          >
+            Take Quiz
+          </Button>
+          <br />
+        </Grid>
       </div>
     );
   }

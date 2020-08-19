@@ -14,30 +14,30 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("quiz/")
+@RequestMapping("/quiz")
 @CrossOrigin(origins = "http://localhost:3000")
 public class AnswerController {
 
     @Autowired
     private AnswerRepo answerRepo;
-    
 
-    // @GetMapping("/quiz/questions")
-    // public List<Answer> getQuestions(Answer answers) {
-    // return answerRepo.findByAnswers(answers);
-    // }
+    @GetMapping("/answers")
+    public List<Answer> getQuestions() {
+        return answerRepo.findAll();
+    }
 
     // // save answers into database
-    @CrossOrigin(origins = "http://localhost:3000/quiz")
-    @PutMapping("/answers")
-    public String addAnswer(@ModelAttribute Answer answers) {
+
+    @PostMapping("/answers")
+    public void addAnswer(@RequestBody Answer answers) {
         answerRepo.save(answers);
 
-        return "/QuizComponent.js";
+        // return "/QuizComponent.js";
     }
 }
